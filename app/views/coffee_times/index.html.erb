@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hora do café</h1>
+<%= link_to 'Pegar café', new_coffee_time_path, class: 'btn mb-20' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Funcionário</th>
+      <th>Café</th>
+      <th>Data</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coffee_times.each do |coffee_time| %>
+      <tr>
+        <td><%= coffee_time.worker.name %></td>
+        <td><%= coffee_time.coffee_type.name %></td>
+        <td><%= coffee_time.created_at %></td>
+        <td><%= link_to 'Destroy', coffee_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

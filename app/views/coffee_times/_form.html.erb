@@ -1,0 +1,19 @@
+<%= simple_form_for(@coffee_time) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="field">
+    <%= f.label "Funcionario" %>
+    <%=  f.select :worker_id, @workers, include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Café" %>
+    <%=  f.select :coffee_type_id, @coffees, include_blank: true %>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit, 'pegar café' %>
+  </div>
+<% end %>
