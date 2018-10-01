@@ -1,24 +1,22 @@
-# README
+# Coffee Break, gerenciador de café por função
+Utilizado no projeto
+* Ruby on Rails
+* Postgresql
+* Materiaizecss
+* Jquery
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Criando bando de dados
 
-Things you may want to cover:
+* rails db:create && rails db:migrate && rails db:seed
 
-* Ruby version
+* seed necessário
 
-* System dependencies
+# Organização do café
 
-* Configuration
+* Desenvolvedor Front end : Café normal
 
-* Database creation
+* Desenvolvedor Back end : Café normal, Café Pingado
 
-* Database initialization
+* Tester : Café normal, Café Pingado, Cappuccino
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Desenvolvedor Chefe : Café normal, Café Pingado, Cappuccino, Mochaccino
