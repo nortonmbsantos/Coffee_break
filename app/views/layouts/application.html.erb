@@ -12,7 +12,7 @@
   <body>
     <%= render '/shared/navbar' %>
     <div class="container">
-      <%= render 'shared/flash_message'  %>
+      <%= flash_message.html_safe %>
       <%= yield %>
     </div>
     

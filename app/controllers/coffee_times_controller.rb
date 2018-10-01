@@ -18,8 +18,7 @@ class CoffeeTimesController < ApplicationController
 
     if !@coffee_time.coffee_permission(coffee_time_params[:worker_id], coffee_time_params[:coffee_type_id]).empty?
       if @coffee_time.save 
-        redirect_to coffee_times_path
-        flash.now[:notice] = 'O café que você pegou foi adicionado!'
+        redirect_to coffee_times_path, flash: { notice: 'O café que você pegou foi adicionado!'}
       else
         flash.now[:error] = 'Existem erros no formulário!'
         render :new

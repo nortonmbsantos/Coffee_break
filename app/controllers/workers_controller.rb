@@ -21,8 +21,9 @@ class WorkersController < ApplicationController
     @occupations = @worker.get_occupations
 
       if @worker.save
-        redirect_to root_path 
+        redirect_to root_path, flash: { notice: 'O funcionário foi adicionado!'}
       else
+        flash.now[:error] = 'Existem erros no formulário!'
         render :new
       end
   end
