@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :coffee_times
-	root to: 'main#index'
+  root to: 'main#index'
 
+  resources :coffee_times
   resources :workers
-  resources :coffee_types
-  resources :occupations
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # resources :coffee_types
+  # resources :occupations
 end

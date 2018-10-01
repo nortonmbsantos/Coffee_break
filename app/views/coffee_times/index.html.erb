@@ -18,8 +18,8 @@
       <tr>
         <td><%= coffee_time.worker.name %></td>
         <td><%= coffee_time.coffee_type.name %></td>
-        <td><%= coffee_time.created_at %></td>
-        <td><%= link_to 'Destroy', coffee_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= coffee_time.created_at.strftime("%Y-%m-%d | %H:%M:%S") %></td>
+        <!-- <td><%= link_to 'Destroy', coffee_time, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>

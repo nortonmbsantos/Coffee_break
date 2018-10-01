@@ -10,6 +10,7 @@ class WorkersController < ApplicationController
 
   def new
     @worker = Worker.new
+    @occupations = @worker.get_occupations
   end
 
   def edit
@@ -17,9 +18,10 @@ class WorkersController < ApplicationController
 
   def create
     @worker = Worker.new(worker_params)
+    @occupations = @worker.get_occupations
 
       if @worker.save
-        redirect_to @worker
+        redirect_to root_path 
       else
         render :new
       end

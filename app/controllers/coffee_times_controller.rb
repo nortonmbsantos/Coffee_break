@@ -13,18 +13,20 @@ class CoffeeTimesController < ApplicationController
 
   def create
     @coffee_time = CoffeeTime.new(coffee_time_params)
-    
+    @workers = @coffee_time.get_workers
+    @coffees = @coffee_time.get_coffees
+
     if !@coffee_time.coffee_permission(coffee_time_params[:worker_id], coffee_time_params[:coffee_type_id]).empty?
       if @coffee_time.save 
         redirect_to coffee_times_path
-         flash.now[:success] = 'O café que você pegou foi adicionado!'
+        flash.now[:notice] = 'O café que você pegou foi adicionado!'
       else
-         redirect_to new_coffee_time_path
-         flash.now[:error] = 'Existem erros no formulário!'
+        flash.now[:error] = 'Existem erros no formulário!'
+        render :new
       end
     else
-      redirect_to new_coffee_time_path
       flash.now[:error] = 'Você não tem permissão para este café!'
+      render :new
     end
   end
 
